@@ -43,13 +43,43 @@ function RX11:draw_string(string_content, int_x, int_y, color3_color)
     return RX11_STRING
 end
 
-function RX11:draw_string_outline(string_content, int_x, int_y, color3_color, color3_outline_color) 
+function RX11:draw_string_outline(string_content, int_x, int_y, color3_color) 
     local RX11_STRING_OUTLINE = Drawing.new("Text")
     RX11_STRING_OUTLINE.Visible = true
     RX11_STRING_OUTLINE.Center = false
     RX11_STRING_OUTLINE.Outline = true
     RX11_STRING_OUTLINE.Size = 19
     RX11_STRING_OUTLINE.Font = 0
+    RX11_STRING_OUTLINE.Text = string_content
+    RX11_STRING_OUTLINE.OutlineColor = color3_outline_color
+    RX11_STRING_OUTLINE.Position = Vector2.new(int_x, int_y)
+    RX11_STRING_OUTLINE.Color = color3_color
+
+    table.insert(RX11.RX11_RENDERED, RX11_STRING_OUTLINE)
+    return RX11_STRING_OUTLINE
+end
+
+function RX11:draw_string_custom_font(string_content, int_x, int_y, int_font, color3_color, color3_outline_color) 
+    local RX11_STRING_OUTLINE = Drawing.new("Text")
+    RX11_STRING_OUTLINE.Visible = true
+    RX11_STRING_OUTLINE.Center = false
+    RX11_STRING_OUTLINE.Size = 19
+    RX11_STRING_OUTLINE.Font = int_font
+    RX11_STRING_OUTLINE.Text = string_content
+    RX11_STRING_OUTLINE.Position = Vector2.new(int_x, int_y)
+    RX11_STRING_OUTLINE.Color = color3_color
+
+    table.insert(RX11.RX11_RENDERED, RX11_STRING_OUTLINE)
+    return RX11_STRING_OUTLINE
+end
+
+function RX11:draw_string_custom_font_outline(string_content, int_x, int_y, int_font, color3_color, color3_outline_color) 
+    local RX11_STRING_OUTLINE = Drawing.new("Text")
+    RX11_STRING_OUTLINE.Visible = true
+    RX11_STRING_OUTLINE.Center = false
+    RX11_STRING_OUTLINE.Outline = true
+    RX11_STRING_OUTLINE.Size = 19
+    RX11_STRING_OUTLINE.Font = int_font
     RX11_STRING_OUTLINE.Text = string_content
     RX11_STRING_OUTLINE.OutlineColor = color3_outline_color
     RX11_STRING_OUTLINE.Position = Vector2.new(int_x, int_y)
