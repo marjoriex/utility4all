@@ -59,6 +59,20 @@ function RX11:draw_string_outline(string_content, int_x, int_y, color3_color)
     return RX11_STRING_OUTLINE
 end
 
+function RX11:draw_string_custom(string_content, int_x, int_y, int_font, int_size, bool_center, bool_visible, color3_color, color3_outline_color) 
+    local RX11_STRING_OUTLINE = Drawing.new("Text")
+    RX11_STRING_OUTLINE.Visible = bool_visible
+    RX11_STRING_OUTLINE.Center = bool_center
+    RX11_STRING_OUTLINE.Size = int_size
+    RX11_STRING_OUTLINE.Font = int_font
+    RX11_STRING_OUTLINE.Text = string_content
+    RX11_STRING_OUTLINE.Position = Vector2.new(int_x, int_y)
+    RX11_STRING_OUTLINE.Color = color3_color
+
+    table.insert(RX11.RX11_RENDERED, RX11_STRING_OUTLINE)
+    return RX11_STRING_OUTLINE
+end
+
 function RX11:draw_string_custom_font(string_content, int_x, int_y, int_font, color3_color, color3_outline_color) 
     local RX11_STRING_OUTLINE = Drawing.new("Text")
     RX11_STRING_OUTLINE.Visible = true
