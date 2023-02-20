@@ -119,5 +119,10 @@ function Utility:request(table_options) return syn.request(table_options) end; -
 function Utility:create_sfn(string_code) return syn.create_secure_function(string_code) end; -- Protects your code with secure function, making it much more difficult for others to alter or view your code. This function can only be used by users
 function Utility:run_sfn(string_code) return syn.run_secure_function(string_code) end; -- Runs code protected by secure function.
 function Utility:ws_create(string_url) return syn.websocket.connect(string_url) end; -- Connects to the url specified. Errors if the connection fails.
+function Utility:mouse_over(table_positions)  -- Returns true if mouse location is over certain Vector2 coordinates.
+    local x1, y1, x2, y2 = table_positions[1], table_positions[2], table_positions[3], table_positions[4]
+    local mouseLoc = game:GetService('UserInputService'):GetMouseLocation()
+    return (mouseLoc.X >= x1 and mouseLoc.X <= (x1 + (x2 - x1))) and (mouseLoc.Y >= y1 and mouseLoc.Y <= (y1 + (y2 - y1)))
+end;
 
 return Utility;
