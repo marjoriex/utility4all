@@ -2,7 +2,6 @@ local RX9 = {}
 
 RX9.__index = RX9
 RX9.RX9_RENDERED = {}
-RX9.RX9_DEFAULTS = {}
 
 function RX9:draw_rect(int_x, int_y, int_width, int_height, color3_color) 
     local RX9_RECT = Drawing.new("Square")
