@@ -1,7 +1,7 @@
 local RX9 = {}
 
 RX9.__index = RX9
-RX9.RX9_RENDERED = {}
+getgenv().RX9_RENDERED = {}
 
 function RX9:draw_rect(int_x, int_y, int_width, int_height, color3_color) 
     local RX9_RECT = Drawing.new("Square")
