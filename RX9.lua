@@ -119,4 +119,16 @@ function RX9:draw_string_centered(string_content, int_x, int_y, color3_color)
     return RX9_STRING_CENTERED
 end
 
+function RX9:draw_vector(vector2_from, vector2_to, number_thickness, color3_color) 
+    local RX9_VECTOR = Drawing.new("Line")
+    RX9_VECTOR.Visibler = true
+    RX9_VECTOR.Color = color3_color
+    RX9_VECTOR.From = vector2_from
+    RX9_VECTOR.To = vector2_to
+    RX9_VECTOR.Transparency = 1
+    
+    table.insert(RX9.RX9_RENDERED, RX9_VECTOR)
+    return RX9_VECTOR
+end
+
 return RX9
