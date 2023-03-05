@@ -121,7 +121,7 @@ end
 
 function RX9:draw_vector(vector2_from, vector2_to, number_thickness, color3_color) 
     local RX9_VECTOR = Drawing.new("Line")
-    RX9_VECTOR.Visibler = true
+    RX9_VECTOR.Visible = true
     RX9_VECTOR.Color = color3_color
     RX9_VECTOR.From = vector2_from
     RX9_VECTOR.To = vector2_to
